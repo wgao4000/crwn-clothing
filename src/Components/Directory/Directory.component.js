@@ -10,9 +10,7 @@ class Directory extends Component {
     };
   }
   render(){
-    const tt = (<div className="directory-menu">{this.state.sections.map(({id, imageUrl, linkUrl, title, size}) => 
-      <Menuitem title = {title} id = {id} linkUrl = {linkUrl} imageUrl = {imageUrl} key = {id} size = {size}/>
-      )
+    const tt = (<div className="directory-menu">{this.state.sections.map(({id, ...remainingProperties}) => (<Menuitem  key = {id}  {...remainingProperties} />))
     }</div>);
     return tt;
   }
